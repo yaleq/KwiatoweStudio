@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+          crossorigin="anonymous">
+    <title>Kwiatowe Studio</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row border justify-content-end mt-2"> <!--koszyk-->
+            <div class="col-1 p-2 text-center border align-self-start"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-bag-heart" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5Zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0ZM14 14V5H2v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1ZM8 7.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z"/>
+            </svg></div>
+        </div>
+        <ul class="nav justify-content-center nav-tabs">
+            <li class="nav-item">
+                <a th:href="@{/galeria}" class="nav-link">galeria</a>
+            </li>
+            <li class="nav-item">
+                <a th:href="@{/oferta}" class="nav-link">oferta</a>
+            </li>
+            <li class="nav-item">
+                <a th:href="@{/}" class="nav-link active" aria-current="page">logo</a>
+            </li>
+            <li class="nav-item">
+                <a th:href="@{/kontakt}" class="nav-link" href="#">kontakt</a>
+            </li>
+            <li class="nav-item">
+                <a th:href="@{/logowanie}" class="nav-link" href="#">logowanie</a>
+            </li>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="page-header" id="banner">
+            <h2>Dodaj produkt</h2>
+            <form action="#" th:action="@{/productCreation/add}" method="POST">
+                <div class="form-group">
+                        <input type="text" th:name="name" placeholder="Wpisz nazwę produktu"/>
+                        <input type="text" th:name="description" placeholder="Napisz krótki opis"/>
+                        <input type="text" th:name="price" placeholder="Podaj cenę"/>
+                    <div class="m-1">
+                        <label for="formFile" class="form-label">Dodaj zdjęcie: </label>
+                        <input class="form-control-file" type="file" id="formFile">
+                    </div>
+                </div>
+                <div class="form-group mt-2">
+                    <input class="form-control-lg bg-white" type="submit" value="Stwórz" name="button"/>
+                </div>
+            </form>
+        </div>
+    </div>
+<!--    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"-->
+<!--            integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"-->
+<!--            crossorigin="anonymous"></script>-->
+</body>
+</html>
