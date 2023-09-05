@@ -32,27 +32,28 @@ public class ProductCreationController {
         return "productCreation";
     }
 
-    @PostMapping(value = PRODUCT_CREATION)
-    public String handleFileUpload(@RequestParam("file") MultipartFile file
-//                                   RedirectAttributes redirectAttributes
-    ) {
-
-        storageService.store(file);
-//        redirectAttributes.addFlashAttribute("message",
-//                "You successfully uploaded " + file.getOriginalFilename() + "!");
-
-        return "redirect:%s".formatted(PRODUCT_CREATION);
-    }
+//    @PostMapping(value = PRODUCT_CREATION)
+//    public String handleFileUpload(@RequestParam("file") MultipartFile file
+////                                   RedirectAttributes redirectAttributes
+//    ) {
+//
+//        storageService.store(file);
+////        redirectAttributes.addFlashAttribute("message",
+////                "You successfully uploaded " + file.getOriginalFilename() + "!");
+//
+//        return "redirect:%s".formatted(PRODUCT_CREATION);
+//    }
 
     @PostMapping(value = PRODUCT_CREATION_ADD)
     public String addProduct(
+            @RequestParam("file") MultipartFile file,
             @ModelAttribute("productDTO") ProductDTO dto,
             BindingResult result
     ) {
         if (result.hasErrors()) {
             return "error";
         }
-
+        storageService.store(file);
         Product product = productMapper.map(dto);
         productService.saveProduct(product);
 

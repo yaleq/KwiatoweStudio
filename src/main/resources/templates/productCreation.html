@@ -42,6 +42,10 @@
                     <input type="text" th:field="*{name}" placeholder="Wpisz nazwę produktu"/>
                     <input type="text" th:field="*{description}" placeholder="Napisz krótki opis"/>
                     <input type="text" th:field="*{price}" placeholder="Podaj cenę"/>
+                    <table>
+                        <tr><td>File to upload:</td><td><input type="file" name="file"/></td></tr>
+<!--                        <tr><td></td><td><input type="submit" value="Upload"/></td></tr>-->
+                    </table>
 <!--                    <label>Photos: </label>-->
 <!--                    <input type="file" name="files" multiple/>-->
 <!--                    <input type="file" name="image" accept="image/png, image/jpeg"/>-->
@@ -60,12 +64,12 @@
                     <input class="form-control-lg bg-white" type="submit" value="Stwórz" name="button"/>
                 </div>
             </form>
-            <form action="/tworzenie-produktu" method="POST" enctype="multipart/form-data">
-                <table>
-                    <tr><td>File to upload:</td><td><input type="file" name="file"/></td></tr>
-                    <tr><td></td><td><input type="submit" value="Upload"/></td></tr>
-                </table>
-            </form>
+<!--            <form action="/tworzenie-produktu" method="POST" enctype="multipart/form-data">-->
+<!--                <table>-->
+<!--                    <tr><td>File to upload:</td><td><input type="file" name="file"/></td></tr>-->
+<!--                    <tr><td></td><td><input type="submit" value="Upload"/></td></tr>-->
+<!--                </table>-->
+<!--            </form>-->
         </div>
     </div>
 </body>
